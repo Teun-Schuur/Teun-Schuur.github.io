@@ -26,7 +26,8 @@ let gener = 0;
 let generations;
 
 function setup() {
-  let canvas = createCanvas(1200, 400);
+  //let canvas = createCanvas(1200, 400);
+  let canvas = createCanvas(displayWidth-30, displayHeight-200);
   canvas.parent('canvascontainer');
 
   // Access the interface elements
