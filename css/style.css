@@ -10,8 +10,11 @@ body{
 ul{
   list-style-type: none;
   overflow: hidden;
-  margin-left: 60px;
+  margin-left: 30px;
+}
 
+h3{
+  text-align: center;
 }
 
 .header{
@@ -22,31 +25,29 @@ ul{
   background-color: rgb(160, 40, 40);
 }
 
-.pr_row1, .pr_row2, .pr_row3{
+.image{
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+}
+
+.pr_row{
   margin-top: 50px;
-  margin-bottom: 50px
+  margin-bottom: 50px;
 }
 
 
-.pr_row1 ul li{
+.pr_row ul li{
   align: center;
   float: left;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-.pr_row2 ul li{
-  align: center;
-  float: left;
-  margin-left: 80px;
-  margin-right: 80px;
-}
-
-.pr_row3 ul li{
-  align: center;
-  float: left;
-  margin-left: 80px;
-  margin-right: 80px;
+ul li div{
+  width: 400px;
+  height:250px;
+  background-color: rgb(120, 0, 150);
 }
 
 footer{
