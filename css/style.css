@@ -19,7 +19,7 @@ ul{
   background-color: rgb(160, 40, 40);
 }
 
-.pr_row1, pr_row2, pr_row3{
+.pr_row1, .pr_row2, .pr_row3{
   margin-top: 50px;
 }
 
@@ -28,6 +28,28 @@ ul{
 }
 
 .pr_row1 ul li{
+  align: center;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.pr_row2 ul{
+  overflow: hidden;
+}
+
+.pr_row2 ul li{
+  align: center;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.pr_row3 ul{
+  overflow: hidden;
+}
+
+.pr_row3 ul li{
   align: center;
   float: left;
   margin-left: 20px;
