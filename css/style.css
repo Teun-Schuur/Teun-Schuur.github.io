@@ -3,21 +3,33 @@
   margin: 0;
 }
 
+body{
+  background-color: rgb(33, 33, 33);
+}
+
+ul{
+  list-style-type: none;
+}
+
 .header{
+  /* overflow: hidden;  ;;  float: left;*/
+  text-align: center;
+  padding-top: 20px;
+  height: 70px;
+  background-color: rgb(160, 40, 40);
+}
+
+.pr_row1, pr_row2, pr_row3{
+  margin-top: 50px;
+}
+
+.pr_row1 ul{
   overflow: hidden;
-  width: 100%;
-  background-color: rgb(200, 200, 200);
 }
 
-.HD1{
-  width: 19.5%;
-  margin-right: 0.5%;
+.pr_row1 ul li{
+  align: center;
   float: left;
-  background-color: rgb(255, 0, 0);
-}
-
-.HD2{
-  width: 80%;
-  float: left;
-  background-color: rgb(0, 255, 0);
+  margin-left: 20px;
+  margin-right: 20px;
 }
