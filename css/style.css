@@ -9,6 +9,9 @@ body{
 
 ul{
   list-style-type: none;
+  overflow: hidden;
+  margin-left: 60px;
+
 }
 
 .header{
@@ -21,37 +24,34 @@ ul{
 
 .pr_row1, .pr_row2, .pr_row3{
   margin-top: 50px;
+  margin-bottom: 50px
 }
 
-.pr_row1 ul{
-  overflow: hidden;
-}
 
 .pr_row1 ul li{
   align: center;
   float: left;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.pr_row2 ul{
-  overflow: hidden;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .pr_row2 ul li{
   align: center;
   float: left;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.pr_row3 ul{
-  overflow: hidden;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .pr_row3 ul li{
   align: center;
   float: left;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+footer{
+  background-color: #2277aa;
+  text-align: center;
+  height: 40px;
+  padding-top: 10px;
 }
