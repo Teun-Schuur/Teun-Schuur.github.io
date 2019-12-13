@@ -3,6 +3,7 @@ let slider;
 let blocks = [];
 let xBlocks = 20;
 let yBlocks = 10;
+var score = 0;
 //super
 function setup() {
   createCanvas(displayWidth, displayHeight);
@@ -29,9 +30,6 @@ function draw() {
     ball = blocks[block].update(ball)
     blocks[block].show()
   }
-  if (ball.y > slider.y-40){
-    ball.setDiraction()
-  }
 }
 
 class Block{
@@ -52,9 +50,10 @@ class Block{
 
   update(b){
     if(this.up){
-      if(((b.y < this.y+this.y2) || b.y < this.y) && ((this.x > b.x < this.x+this.x2))){// || b.x < this.x)){
+      if(((b.y < this.y+this.y2) || b.y < this.y) && (((this.x < b.x) && (b.x < this.x + this.x2)))){// || b.x < this.x)){
         ball.setDiraction()
         this.up = false
+        score += 1;
       }
     }
     return b
@@ -70,12 +69,17 @@ class Slider{
 
   update(){
     this.x = mouseX;
+    if((ball.y > slider.y-40 && ball.y < slider.y) && (this.x-150<ball.x && this.x+150>ball.x)){
+      ball.setDiraction()
+    }
   }
 
   show(){
     fill(255)
-    rect(this.x-150, this.y-20, 400, 20)
+    rect(this.x-150, this.y-20, 300, 20)
   }
+
+
 }
 
 class Ball{
@@ -96,6 +100,12 @@ class Ball{
   setDiraction(){      // 0 - 100 (left-up to right-up)
     this.Xspeed = random(-4, 4)
     this.Yspeed = -this.Yspeed;
+    if(this.Yspeed<0){
+      this.Yspeed = -(6+score/8);
+    }
+    else{
+      this.Yspeed = 6+score/8;
+    }
   }
 
   show(){
