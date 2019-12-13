@@ -76,11 +76,11 @@ class NeuralNetwork {
     return output.toArray();
   }
 
-  setLearningRate(learning_rate = 0.05) {
+  setLearningRate(learning_rate = 0.001) {
     this.learning_rate = learning_rate;
   }
 
-  setActivationFunction(func = sigmoid) {
+  setActivationFunction(func = tanh) {
     this.activation_function = func;
   }
 

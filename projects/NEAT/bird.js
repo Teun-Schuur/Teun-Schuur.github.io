@@ -7,7 +7,7 @@
 
 // Mutation function to be passed into bird.brain
 function mutate(x) {
-  if (random(1) < 0.04) {
+  if (random(1) < 0.03) {
     let offset = randomGaussian() * 0.5;
     let newx = x + offset;
     return newx;
@@ -34,7 +34,7 @@ class Bird {
       this.brain = brain.copy();
       this.brain.mutate(mutate);
     } else {
-      this.brain = new NeuralNetwork(5, 6, 2);
+      this.brain = new NeuralNetwork(5, 22, 2);
     }
 
     // Score is how many frames it's been alive

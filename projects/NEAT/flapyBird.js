@@ -30,7 +30,7 @@ function generate(oldBirds) {
   return newBirds;
 }
 
-// Normalize the fitness of all birds
+// Normize the fitness of all birds
 function normalizeFitness(birds) {
   // Make score exponentially better?
   for (let i = 0; i < birds.length; i++) {
