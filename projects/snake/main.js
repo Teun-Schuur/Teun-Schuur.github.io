@@ -20,31 +20,15 @@ function setup() {
 function draw() {
   background(0);
   for(let i = 0; i<2; i++){
-    setDirectionSnake();
     for (let i = 0; i < numSegments - 1; i++) {
         line(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
     }
     updateSnakeCoordinates();
-    //checkGameStatus();
+    checkGameStatus();
     checkForFruit();
   }
 }
 
-function setDirectionSnake(){
-    if (((xCor[numSegments - 1] - xFruit)<(yCor[numSegments - 1] - yFruit)) ||  ((xCor[numSegments - 1] > xFruit)>(yCor[numSegments - 1] - yFruit))){
-        if (xCor[numSegments - 1] <= xFruit){
-            direction = "right";
-        } else {
-            direction = "left";
-        }
-    } else{
-        if (yCor[numSegments - 1] <= yFruit) {
-            direction = "down";
-        } else{
-            direction = "up";
-        }
-    }
-}
 
 function updateSnakeCoordinates() {
   for (let i = 0; i < numSegments - 1; i++) {
@@ -81,12 +65,24 @@ function checkGameStatus() {
     yCor[yCor.length - 1] < 0 ||
     checkSnakeCollision()
   ) {
-    noLoop();
-    const scoreVal = parseInt(scoreElem.html().substring(8));
-    scoreElem.html('Game ended! Your score was : ' + scoreVal);
+    noLoop()
+    // const scoreVal = parseInt(scoreElem.html().substring(8));
+    // scoreElem.html('Game ended! Your score was : ' + scoreVal);
   }
 }
 
+function reset(){
+  scoreElem.html('Score = ' + 0);
+  numSegments = 10;
+  direction = "right";
+  xCor = [];
+  yCor = [];
+  updateFruitCoordinates();
+  for (let i = 0; i < numSegments; i++) {
+    xCor.push(xStart + i * diff);
+    yCor.push(yStart);
+  }
+}
 
 function checkSnakeCollision() {
   const snakeHeadX = xCor[xCor.length - 1];
@@ -115,19 +111,24 @@ function updateFruitCoordinates() {
   yFruit = floor(random(10, (height - 100) / 10)) * 10;
 }
 
-// function keyPressed() {
-//   switch (key) {
-//     case "a":
-//       direction = 'left';
-//       break;
-//     case "d":
-//       direction = 'right';
-//       break;
-//     case "w":
-//       direction = 'up';
-//       break;
-//     case "s":
-//       direction = 'down';
-//       break;
-//   }
-// }
+function keyPressed() {
+  console.log(key)
+  switch (key) {
+    case "a":
+      direction = 'left';
+      break;
+    case "d":
+      direction = 'right';
+      break;
+    case "w":
+      direction = 'up';
+      break;
+    case "s":
+      direction = 'down';
+      break;
+    case " ":
+      loop();
+      reset();
+      break;
+  }
+}
