@@ -42,12 +42,10 @@ function draw() {
   }
 
   let next = make2DArray(cols, rows);
-
-  // Compute next based on grid
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let state = grid[i][j];
-      // Count live neighbors!
+      // tel buren
       let sum = 0;
       let neighbors = countNeighbors(grid, i, j);
 
@@ -60,7 +58,6 @@ function draw() {
       }
     }
   }
-
   grid = next;
 }
 
