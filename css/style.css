@@ -40,6 +40,11 @@ p {
     font-size: 5em;
   }
 }
+
+#active{
+  color: #1abc9c
+}
+
 .site-header h2 {
   font-size: 12px;
   letter-spacing: -0.03em;
