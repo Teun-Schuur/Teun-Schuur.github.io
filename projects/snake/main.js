@@ -1,15 +1,16 @@
 
 function setup() {
-  scoreElem = createDiv('Score = 0');
-  scoreElem.position(20, 20);
-  scoreElem.id = 'score';
-  scoreElem.style('color', 'white');
+
 
   createCanvas(displayWidth, displayHeight);
   frameRate(diff-diff/1.5);
   stroke(255);
   strokeWeight(diff);
   updateFruitCoordinates();
+  scoreElem = createDiv('Score = 0');
+  scoreElem.position(20, 20);
+  scoreElem.id = 'score';
+  scoreElem.style('color', 'white');
 
   for (let i = 0; i < numSegments; i++) {
     xCor.push(xStart + i * diff);
@@ -107,24 +108,32 @@ function checkForFruit() {
 }
 
 function updateFruitCoordinates() {
-  xFruit = floor(random(diff, (width - 100) / diff)) * diff;
-  yFruit = floor(random(diff, (height - 100) / diff)) * diff;
+  xFruit = floor(random(1, (width - 100) / diff)) * diff;
+  yFruit = floor(random(1, (height - 100) / diff)) * diff;
 }
 
 function keyPressed() {
   console.log(key)
   switch (key) {
     case "a":
-      direction = 'left';
+      if (direction != "right"){
+        direction = 'left';
+      }
       break;
     case "d":
-      direction = 'right';
+      if (direction != "left"){
+        direction = 'right';
+      }
       break;
     case "w":
-      direction = 'up';
+      if (direction != "down"){
+        direction = 'up';
+      }
       break;
     case "s":
-      direction = 'down';
+      if (direction != "up"){
+        direction = 'down';
+      }
       break;
     case " ":
       loop();
