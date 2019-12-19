@@ -6,9 +6,9 @@ function setup() {
   scoreElem.style('color', 'white');
 
   createCanvas(displayWidth, displayHeight);
-  frameRate(15);
+  frameRate(diff-diff/1.5);
   stroke(255);
-  strokeWeight(10);
+  strokeWeight(diff);
   updateFruitCoordinates();
 
   for (let i = 0; i < numSegments; i++) {
@@ -107,8 +107,8 @@ function checkForFruit() {
 }
 
 function updateFruitCoordinates() {
-  xFruit = floor(random(10, (width - 100) / 10)) * 10;
-  yFruit = floor(random(10, (height - 100) / 10)) * 10;
+  xFruit = floor(random(diff, (width - 100) / diff)) * diff;
+  yFruit = floor(random(diff, (height - 100) / diff)) * diff;
 }
 
 function keyPressed() {

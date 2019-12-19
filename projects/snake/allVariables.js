@@ -1,7 +1,7 @@
 const directions = ["right", "left", "up", "down", "space"]
-const xStart = 200; //starting x coordinate for snake
-const yStart = 250; //starting y coordinate for snake
-const diff = 10;
+const xStart = 300; //starting x coordinate for snake
+const yStart = 300; //starting y coordinate for snake
+const diff = 30;
 
 let numSegments = 10;
 let direction = "right";
