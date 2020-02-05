@@ -4,7 +4,8 @@ let blocks = [];
 let xBlocks = 20;
 let yBlocks = 10;
 var score = 0;
-//super
+
+
 function setup() {
   createCanvas(displayWidth, displayHeight);
   frameRate(60);

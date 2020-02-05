@@ -10,7 +10,7 @@ function setup() {
   scoreElem = createDiv('Score = 0');
   scoreElem.position(20, 20);
   scoreElem.id = 'score';
-  scoreElem.style('color', 'white');
+  scoreElem.style ('color', 'white');
 
   for (let i = 0; i < numSegments; i++) {
     xCor.push(xStart + i * diff);
