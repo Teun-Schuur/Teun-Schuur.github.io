@@ -52,7 +52,16 @@ h3 {
   height: 500px;
   left: 150px;
   color: rgb(200, 200, 200);
-  /* background-color: rgb(160, 40, 40); */
+}
+
+.SecondDiv {
+  text-align: center;
+  padding-top: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 700px;
+  left: 150px;
+  color: rgb(200, 200, 200);
 }
 
 .image {
