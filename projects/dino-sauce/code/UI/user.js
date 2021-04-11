@@ -2,14 +2,15 @@
 
 class User{
   constructor(){
-    // setCookie("highScore", "Teun:5 Bink:10 Hugo:15")
+    // setCookie("highScore", "Hugo:166 Bink:144 Midas:133")
     this.highScore = 0;
     this.lowScore = Infinity;
     this.highScoreData = {}
-    let buff = getCookie("highScore")
-    buff = buff.split(" ")
+    this.localHighScore = 0;
+    let buff = getCookie("highScore");
+    buff = buff.split(" ");
     for(var i = 0; i<buff.length; i++){
-      let user = buff[i].split(":")
+      let user = buff[i].split(":");
       this.highScoreData[user[0]] = int(user[1])
       if(this.highScore < int(user[1])){
         this.highScore = int(user[1])
@@ -18,22 +19,23 @@ class User{
         this.lowScore = int(user[1])
       }
     }
-    this.dino;
-    this.cactuses = [];
     this.game;
     this.reset();
     this.name = "";
     this.inp = true;
     this.inputBox = new InputBox(width/2-200, height/2);
+    this.return = false;
   }
 
   reset(){
-    this.game = new Game(true);
+    this.game = new Game(true, false);
   }
 
   update(){
     if(this.name == ""){
       background(0);
+    }else{
+      this.inputBox = NaN;
     }
     if(!this.game.isDeath() && this.name != ""){
       this.game.update()
@@ -41,7 +43,7 @@ class User{
   }
 
   changeGameState(){
-    return false;
+    return this.return;
   }
 
   render(){
@@ -56,10 +58,17 @@ class User{
     if(key == " " && this.game.isDeath()){
       this.reset()
     }
+    if(key == "r" && this.name!=""){
+      this.return = new User()
+    }
+    if(key == "m" && this.name!=""){
+      this.return = new Menu()
+    }
   }
 }
 
 function setCookie(cname, cvalue) {
+  console.log(cname, cvalue)
   var d = new Date();
   d.setTime(d.getTime() + (365*24*60*60*1000));
   var expires = "expires="+ d.toUTCString();
