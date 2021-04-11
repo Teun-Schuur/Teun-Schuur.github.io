@@ -54,6 +54,17 @@ h3 {
   color: rgb(200, 200, 200);
 }
 
+.gitaar {
+  text-align: center;
+  padding-top: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  /* height: 100%; */
+  left: 150px;
+  color: rgb(200, 200, 200);
+}
+
 .SecondDiv {
   text-align: center;
   padding-top: 15px;
